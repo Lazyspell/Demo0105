@@ -21,12 +21,37 @@ const User = require(`./models/user`);
 // })
 
 
-userApi.addUser('gabby', 'password', 'gabber', 'gab', 'gabby@revature.com', new Date('09/01/1994'), function(user) {
-    console.log(user);
+// userApi.addUser('gabby', 'password', 'gabber', 'gab', 'gabby@revature.com', new Date('09/01/1994'), function(user) {
+//     console.log(user);
 
-})
+// })
 
-userPostApi.addPost("Child called it", "this was such a great book yea yea", 7, new Date(), function(post) {
+// userPostApi.addPost("Child called it", "this was such a great book yea yea", 7, new Date(), function(post) {
+//     console.log(post);
+
+// })
+
+// userApi.getUserByUsername("aanderson", function(user) {
+// console.log(user);
+
+// })
+
+// userApi.getUserByEmail('aanderson@revature.com', function(user)
+// {
+//     console.log(user);
+// })
+
+// userPostApi.getPostById(3, function(post)  {
+// console.log(post);
+// })
+
+userPostApi.deletePostById(3, function(post){
     console.log(post);
-
 })
+// userPostApi.getPostById(3, function(post)  {
+//     console.log(post);
+//     })
+
+userPostApi.getAllPosts(function(post){
+    console.log(post);
+    })
