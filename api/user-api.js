@@ -16,6 +16,18 @@ const getUserById = (id, callback) => {
     }, 250);
 }
 
+const getUserByUsername = (un, cb) => {
+    setTimeout(() => {
+        if (!un) throw Error(`Oh no! You gave me bad data`);
+
+        const user = userData.filter(user => user.username === un).pop();
+
+        if (!user) throw Error(`Oh no! You gave me bad data`);
+
+        cb(user);
+    }, 250);
+}
+
 const getUserByCredentials = (un, pw, cb) => {
     setTimeout(() => {
         if (!un || !pw) throw Error(`Oh no! You gave me bad data`); //truthy/falsy in use here
@@ -41,5 +53,6 @@ module.exports = {
     getUserByCredentials,
     getUserById,
     addUser,
-    getAllUsers
+    getAllUsers,
+    getUserByUsername
 };
