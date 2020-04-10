@@ -26,6 +26,21 @@ const addPost = (title, body, posterID, time, cb) => {
 
 }
 
+
+
+const deletePostById = (id, callback) => {
+    setTimeout(() => {
+   getPostById(id, function(post){
+       post = null;
+       callback(post)});
+ 
+    }, 250);
+ 
+ }
+ 
+ const getAllPosts = (callback) => setTimeout(() => callback(postData), 250);
+
+
 // const gitPosterId = (posterID, callback) => {
 //     // if (!posterID) throw Error(`No post was posted by this person`);
 //     const post = postData.filter(post => post.posterID === posterID);
@@ -36,5 +51,7 @@ const addPost = (title, body, posterID, time, cb) => {
 module.exports = {
     getPostById,
     // gitPosterId,
-    addPost
+    addPost,
+    deletePostById,
+    getAllPosts
 };
