@@ -26,6 +26,7 @@ const User = require(`./models/user`);
 
 // })
 
+
 // userPostApi.addPost("Child called it", "this was such a great book yea yea", 7, new Date(), function(post) {
 //     console.log(post);
 
@@ -55,3 +56,13 @@ userPostApi.deletePostById(3, function(post){
 userPostApi.getAllPosts(function(post){
     console.log(post);
     })
+
+// userPostApi.addPost("Child called it", "this was such a great book yea yea", 7, new Date(), function(post) {
+//     console.log(post);
+
+// })
+
+userApi.getUserByUsername("anderson", function(user) {
+    console.log(user);
+})
+

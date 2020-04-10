@@ -16,6 +16,7 @@ const getUserById = (id, callback) => {
     }, 250);
 }
 
+ timmcdonald
 const getUserByEmail = (email, cb) => {
     setTimeout(() => {
         if(email){
@@ -38,6 +39,18 @@ const getUserByUsername = (un, cb) => {
     cb(user);
 },
 250);
+
+const getUserByUsername = (un, cb) => {
+    setTimeout(() => {
+        if (!un) throw Error(`Oh no! You gave me bad data`);
+
+        const user = userData.filter(user => user.username === un).pop();
+
+        if (!user) throw Error(`Oh no! You gave me bad data`);
+
+        cb(user);
+    }, 250);
+ master
 }
 
 const getUserByCredentials = (un, pw, cb) => {
@@ -75,4 +88,5 @@ module.exports = {
     getAllUsers,
     getUserByUsername,
     getUserByEmail,
+    getUserByUsername
 };
