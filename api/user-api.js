@@ -16,6 +16,36 @@ const getUserById = (id, callback) => {
     }, 250);
 }
 
+const getUserByUsername = (un, cb) => {
+    setTimeout(() => {
+        if(!un){
+            throw Error('On no!, You gave me bad data');
+        }
+        const user = user.Datafilter(user => user.username === un).pop();
+
+        if(!user) throw Error("oh no!, You gave me bad data");
+        cb(user);
+
+    }, 250);
+}
+
+const getUserByEmail = (email, cb) => {
+    setTimeout(() =>{
+        if(!email){
+            throw Error('Oh no!, you gave me bad data');
+        }
+
+        console.log(email);
+        const user = userData.filter(user => user.email === email).pop();
+        
+        if(!user){
+            throw Error('Oh no!, you gave me bad intel');
+        }
+
+        cb(user);
+    }, 250);
+}
+
 const getUserByCredentials = (un, pw, cb) => {
     setTimeout(() => {
         if (!un || !pw) throw Error(`Oh no! You gave me bad data`); //truthy/falsy in use here
@@ -41,5 +71,7 @@ module.exports = {
     getUserByCredentials,
     getUserById,
     addUser,
-    getAllUsers
+    getAllUsers,
+    getUserByEmail,
+    getUserByUsername
 };
